@@ -24,7 +24,7 @@
         integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
         crossorigin="anonymous"></script>
     <!-- linking our javascript -->
-    <script src="table.js"></script>
+    <!-- <script src="table.js"></script> -->
 </head>
 
 <body>
@@ -53,14 +53,45 @@
                 Waiting List
             </div>
             <div class="card-body">
-                <div id="reservationsList">
+                <div id="waitingList">
                 </div>
             </div>
         </div>
-        <a href="/api/view">API Table Link</a> |
-        <a href="/api/list">API Wait List</a>
+        <a href="/api/reservations">API Table Link</a> |
+        <a href="/api/waitlist">API Wait List</a> |
+        <button class="btn btn-none" id="clear">Clear Table</button>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="table.js"></script> -->
 
+    <script type="text/javascript">
+        function displayTables() {
+            var waitingnumber = 1;
+            $.get("/api/reservations", function (res) {
+                for (var i = 0; i < res.length; i++) {
+                    var id = res[i].uniqueID; var number = i + 1;
+                    $("#reservationsList").append("<button class='btn btn-primary'>" + number + "</button> | " + id);
+
+                }
+            })
+            $.get("/api/waitlist", function (res2) {
+                for (var i = 0; i < res2.length; i++) {
+                    var id2 = res2[i].uniqueID; $("#waitingList").append("<button>" +
+                        waitingnumber + "</button> | " + id);
+                    waitingnumber++;
+                }
+            })
+        }
+        displayTables();
+
+        $("#clear").on("click", function () {
+            $("#reservationsList").empty();
+            $("#waitingList").empty();
+            
+            $.post("/api/clear");
+        })
+
+    </script>
 </body>
 
 </html>
