@@ -70,16 +70,16 @@
             $.get("/api/reservations", function (res) {
                 for (var i = 0; i < res.length; i++) {
                     var id = res[i].uniqueID; var number = i + 1;
-                    $("#reservationsList").append("<button class='btn btn-primary'>" + number + "</button> | " + id);
+                    $("#reservationsList").append("<button class='btn btn-primary'>" + number + "</button> | " + id + "<br><br>");
 
                 }
-            })
-            $.get("/api/waitlist", function (res2) {
-                for (var i = 0; i < res2.length; i++) {
-                    var id2 = res2[i].uniqueID; $("#waitingList").append("<button>" +
-                        waitingnumber + "</button> | " + id);
-                    waitingnumber++;
-                }
+                $.get("/api/waitlist", function (res2) {
+                    for (var i = 0; i < res2.length; i++) {
+                        var id2 = res2[i].uniqueID; $("#waitingList").append("<button class='btn btn-primary'>" +
+                            waitingnumber + "</button> | " + id + "<br><br>");
+                        waitingnumber++;
+                    }
+                })
             })
         }
         displayTables();
@@ -87,7 +87,7 @@
         $("#clear").on("click", function () {
             $("#reservationsList").empty();
             $("#waitingList").empty();
-            
+
             $.post("/api/clear");
         })
 
