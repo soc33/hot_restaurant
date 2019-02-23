@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Hot_Resturant</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+</head>
+
+<body>
+    <div class="jumbotron">
+        <h1>
+            <i class="fas fa-utensils"></i>
+            Hot_Resturant
+        </h1>
+        <br>
+        Make Your Reservation
+        <button>View Tables</button>
+        <button>Home</button>
+    </div>
+
+    <form id="reservation-form">
+        <div class="card-header">Add Reservation</div>
+        <div class="form-group">
+            <label for="Reservation Type">Reservation Type</label>
+            <select class="form-control" placeholder="Reservation Type">
+                <option>Please select a dining option</option>
+                <option>Dine In</option>
+                <option>Take Out</option>
+            </select>
+        </div>
+        <div class="form-group">
+                <label for="Name">Name</label>
+            <input class="form-control" id="name" type="text" placeholder="Name">
+        </div>
+        <div class="form-group">
+                <label for="Phone Number">Phone Number</label>
+            <input class="form-control" id="phoneNumber" type="text" placeholder="Phone Number">
+        </div>
+        <div class="form-group">
+                <label for="Email">Email</label>
+            <input class="form-control" id="email" type="text" placeholder="Email">
+        </div>
+        <div class="form-group">
+                <label for="Unique ID">Unique ID</label>
+            <input class="form-control" id="uniqueId" type="text" placeholder="Unique ID">
+        </div>
+        <button type="submit" id="submit-info" class="btn btn-primary">Submit</button>
+    </form>
+
+
+</body>
+<!-- Compiled and minified JavaScript -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+
+</html>
