@@ -1,0 +1,27 @@
+/* add.html styles */
+.jumbotron {
+    background-image: url(add_jumbotron.jpg);
+    background-size: auto;
+    color: black;
+    font-weight: bolder;
+    text-align: center;
+}
+
+form {
+    background-color: #212529;
+    color: white;
+}
+
+.form-group, #submit-info {
+    margin: 10px;
+}
+
+.card-header {
+    background-image: url(kevin-chili.jpg);
+    background-size: contain;
+    color: white;
+}
+
+.container {
+    background-size: auto;
+}

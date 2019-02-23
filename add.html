@@ -23,39 +23,41 @@
         </h1>
         <br>
         Make Your Reservation
-        <button>View Tables</button>
-        <button>Home</button>
+        <br>
+        <button><i class="fas fa-table"></i> View Tables</button>
+        <button><i class="fas fa-home"></i></button>
     </div>
 
-    <form id="reservation-form">
-        <div class="card-header">Add Reservation</div>
-        <div class="form-group">
-            <label for="Reservation Type">Reservation Type</label>
-            <select class="form-control" placeholder="Reservation Type">
-                <option>Please select a dining option</option>
-                <option>Dine In</option>
-                <option>Take Out</option>
-            </select>
-        </div>
-        <div class="form-group">
+    <div class="container">
+        <form id="reservation-form">
+            <div class="card-header">Add Reservation</div>
+            <div class="form-group">
+                <label for="Reservation Type">Reservation Type</label>
+                <select class="form-control" placeholder="Reservation Type">
+                    <option>Please select a dining option</option>
+                    <option>Dine In</option>
+                    <option>Take Out</option>
+                </select>
+            </div>
+            <div class="form-group">
                 <label for="Name">Name</label>
-            <input class="form-control" id="name" type="text" placeholder="Name">
-        </div>
-        <div class="form-group">
+                <input class="form-control" id="name" type="text" placeholder="Name">
+            </div>
+            <div class="form-group">
                 <label for="Phone Number">Phone Number</label>
-            <input class="form-control" id="phoneNumber" type="text" placeholder="Phone Number">
-        </div>
-        <div class="form-group">
+                <input class="form-control" id="phoneNumber" type="text" placeholder="Phone Number">
+            </div>
+            <div class="form-group">
                 <label for="Email">Email</label>
-            <input class="form-control" id="email" type="text" placeholder="Email">
-        </div>
-        <div class="form-group">
+                <input class="form-control" id="email" type="text" placeholder="Email">
+            </div>
+            <div class="form-group">
                 <label for="Unique ID">Unique ID</label>
-            <input class="form-control" id="uniqueId" type="text" placeholder="Unique ID">
-        </div>
-        <button type="submit" id="submit-info" class="btn btn-primary">Submit</button>
-    </form>
-
+                <input class="form-control" id="uniqueId" type="text" placeholder="Unique ID">
+            </div>
+            <button type="submit" id="submit-info" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
 
 </body>
 <!-- Compiled and minified JavaScript -->
