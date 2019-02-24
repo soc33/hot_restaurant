@@ -12,48 +12,40 @@
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="style.css"> -->
 </head>
 
 <body>
     <div class="container">
         <div class="jumbotron">
-            <h1>
-                <i class="fas fa-utensils"></i>
-                Hot_Resturant
+            <h1 class="display-4 text-center">
+                <i class="fas fa-fire-alt"></i>
+                Hot Resturant Reservations
             </h1>
-            <br>
-            Make Your Reservation
+            <hr class="my-4">            
+            <h4 class="text-center">Make Your Reservation</h4>
             <div class="d-flex justify-content-center"><a class="btn btn-primary btn-lg m-2" href="/view"
-                    role="button"><i class="fas fa-table"></i> View Tables</a></div>
-            <div class="d-flex justify-content-center"><a class="btn btn-primary btn-lg m-2" href="/" role="button"><i
+                    role="button"><i class="fas fa-table"></i> View Tables</a>
+            <a class="btn btn-primary btn-lg m-2" href="/" role="button"><i
                         class="fas fa-home"></i></a>
             </div>
         </div>
 
-        <form id="reservation-form">
+        <form class="form card" id="reservation-form">
             <div class="card-header">Add Reservation</div>
-            <!-- <div class="form-group"> -->
-            <!-- <label for="Reservation Type">Reservation Type</label>
-                <select class="form-control" placeholder="Reservation Type">
-                    <option>Please select a dining option</option>
-                    <option>Dine In</option>
-                    <option>Take Out</option>
-                </select> -->
-            <!-- </div> -->
-            <div class="form-group">
+            <div class="form-group p-2">
                 <label for="Name">Name</label>
                 <input class="form-control" id="name" type="text" placeholder="Name">
             </div>
-            <div class="form-group">
+            <div class="form-group p-2">
                 <label for="Phone Number">Phone Number</label>
                 <input class="form-control" id="phoneNumber" type="text" placeholder="Phone Number">
             </div>
-            <div class="form-group">
+            <div class="form-group p-2">
                 <label for="Email">Email</label>
                 <input class="form-control" id="email" type="text" placeholder="Email">
             </div>
-            <div class="form-group">
+            <div class="form-group p-2">
                 <label for="Unique ID">Unique ID</label>
                 <input class="form-control" id="uniqueId" type="text" placeholder="Unique ID">
             </div>
@@ -88,18 +80,13 @@
             uniqueID: $("#uniqueId").val().trim()
         }
         if (!isNaN(reservation.uniqueID)) {
-            // var div = $("<div>");
-            // div.push(numberOnList + " | " + reservation.uniqueID);
-            // numberOnList++;
 
-
-            // Question: What does this code do??
             $.post("/add", reservation)
                 .then(function (data) {
                     console.log("add.html", data);
                     if (data === true) {
                         alert("Adding Reservation...");
-                    } else if( data === false) {
+                    } else if (data === false) {
                         alert("Tables are full. You are added to the waitlist");
                     } else {
                         alert("Unique ID is already taken");
